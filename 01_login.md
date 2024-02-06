@@ -192,3 +192,30 @@ if (savedUsername === null) {
   paintGreeting(savedUsername);
 }
 ```
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <form id="login-form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="이름을 입력하세요"
+      />
+      <button>로그인</button>
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+  </body>
+</html>
+```
