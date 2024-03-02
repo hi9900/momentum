@@ -28,13 +28,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Delete old API key file
-        run: rm apikey.js
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Generate API key file
         run: |
           echo "const config = { apikey: '${{ secrets.WEATHER_KEY }}' };" > apikey.js
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
