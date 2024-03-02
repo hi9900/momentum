@@ -1,5 +1,5 @@
-echo -e "
+echo "
 const config = {
-  apikey: `${API_KEY}`,
+  apikey: ${{ secrets.API_KEY }},
 };
 " > apikey.js
