@@ -1,5 +1,17 @@
-echo "
-const config = {
-  apikey: ${{ secrets.API_KEY }},
-};
-" > apikey.js
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # 원하는 브랜치로 변경
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Generate API key file
+      run: echo "const config = { apikey: '${{ secrets.API_KEY }}' };" > apikey.js
